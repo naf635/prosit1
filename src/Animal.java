@@ -1,5 +1,6 @@
 public class Animal {
 
+
     String family;
     String name;
     int age;
@@ -12,7 +13,9 @@ public class Animal {
         this.age=age;
         this.isMammal=isMammal;
     }
-
+    public String toString() {
+        return "Animal [famille=" + family + ", nom=" + name + ", age=" + age + ", mammifere=" + isMammal + "]";
+    }
 
     public static void main(String[] args) {
 
