@@ -1,7 +1,9 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
 
-    String name ;
-    String city;
+   private String name ;
+   private  String city;
     Animal[] animals;
    int nbrCages=25;
     int animalcount=0;
@@ -9,6 +11,27 @@ public class Zoo {
         this.name=name;
         this.city=city;
         animals = new Animal[nbrCages];
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public String getCity()
+    {
+        return city;
+    }
+    public void setName(String name)
+    {
+        if(name.isEmpty())
+        {
+            System.out.println("le nom du zoo est vide");
+            return;
+        }
+        this.name=name;
+    }
+    public void setCity(String city)
+    {
+        this.city=city;
     }
 
 
@@ -23,17 +46,17 @@ public class Zoo {
     public void afficherAnimaux()
     {
         for(int i=0;i<animalcount;i++) {
-            System.out.println("la famille est:"+animals[i].family);
-            System.out.println("le nom est:"+animals[i].name);
-            System.out.println("l'age est:"+animals[i].age);
-            System.out.println("l'ismammal est:"+animals[i].isMammal);
+            System.out.println("la famille est:"+animals[i].getFamily());
+            System.out.println("le nom est:"+animals[i].getName());
+            System.out.println("l'age est:"+animals[i].getAge());
+            System.out.println("l'ismammal est:"+animals[i].getIsMammal());
         }
     }
     public int searchAnimal(Animal animal){
 
         for(int i =0;i<animalcount;i++)
         {
-            if(animal.name.equals(animals[i].name))
+            if(animal.getName().equals(animals[i].getName()))
             {
                 return i;
             }
@@ -62,7 +85,7 @@ public class Zoo {
     }
     public boolean addAnimal(Animal animal) {
         int verif = searchAnimal(animal);
-        if (verif == -1 && animalcount<nbrCages) {
+        if (verif == -1 && !isZooFull()) {
             animals[animalcount] = animal;
             animalcount+=1;
             return true;
@@ -80,7 +103,7 @@ public class Zoo {
     }
 
     public String toString() {
-        return "Zoo [nom=" + name + ", ville=" + city + ", cages=" + nbrCages + ", animaux=" + animalcount + "]";
+        return "tn.esprit.gestionzoo.entities.Zoo [nom=" + name + ", ville=" + city + ", cages=" + nbrCages + ", animaux=" + animalcount + "]";
     }
     public static void main(String[] args) {
 

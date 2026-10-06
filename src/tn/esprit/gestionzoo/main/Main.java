@@ -1,3 +1,6 @@
+package tn.esprit.gestionzoo.main;
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 public class Main {
 
     public static void main(String[] args) {
@@ -41,13 +44,13 @@ public class Main {
         }
 
         // Instruction 15 : zoo plein et comparaison
-        System.out.println("Zoo plein ? " + z.isZooFull());
+        System.out.println("tn.esprit.gestionzoo.entities.Zoo plein ? " + z.isZooFull());
         System.out.println(z);
 
         Zoo z2 = new Zoo("zoo2", "sfax");
         z2.addAnimal(a);
-        System.out.println("Zoo plein (z2) ? " + z2.isZooFull());
+        System.out.println("tn.esprit.gestionzoo.entities.Zoo plein (z2) ? " + z2.isZooFull());
         Zoo plusGrand = Zoo.comparerZoo(z, z2);
-        System.out.println("Le plus grand zoo est : " + plusGrand.name);
+        System.out.println("Le plus grand zoo est : " + plusGrand.getName());
     }
 }
