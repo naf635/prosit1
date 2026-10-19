@@ -5,7 +5,7 @@ public class Zoo {
    private String name ;
    private  String city;
     Animal[] animals;
-   int nbrCages=25;
+   final int nbrCages=25;
     int animalcount=0;
     public Zoo(String name, String city) {
         this.name=name;

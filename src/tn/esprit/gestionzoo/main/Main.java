@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.main;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,7 +10,21 @@ public class Main {
         Animal a3 = new Animal("mamiferes", "vache", 3, true);   // identique à a
 
         Zoo z = new Zoo("myZoo", "tunis");
+       AnimauxAquatiques aq = new AnimauxAquatiques("poissons", "requin", 6, false, "ocean");
+        AnimauxTerrestres t = new AnimauxTerrestres("mammiferes", "vache", 3, true, 4);
+        Dolphin d = new Dolphin("mammiferes", "flipper", 8, true, "mer", 40.5f);
+        Penguin p = new Penguin("oiseaux", "pingu", 4, false, "bassin", 120.0f);
 
+        System.out.println(aq);
+        System.out.println(t);
+        System.out.println(d);
+        System.out.println(p);
+
+        aq.swim();
+        d.swim();
+        p.swim();
+        System.out.println("la vitesse est:"+d.getSmimmingSpeed());
+        System.out.println("la profondeur max est:"+p.getSwimmingDepth());
         // Instructions 8 et 9 : affichage du zoo
         z.displayZoo();
         System.out.println(z);
