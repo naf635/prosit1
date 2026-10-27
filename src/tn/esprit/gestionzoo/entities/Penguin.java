@@ -18,6 +18,10 @@ public class Penguin extends AnimauxAquatiques{
         return swimmingDepth;
     }
     @Override
+    public void swim() {
+        System.out.println("Ce penguin nage");
+    }
+    @Override
     public String toString() {
         return "Penguin [famille=" + family + ", nom=" + name + ", age=" + age
                 + ", mammifere=" + isMammal + ", habitat=" + habitat

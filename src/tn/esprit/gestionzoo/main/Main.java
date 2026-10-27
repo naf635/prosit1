@@ -10,17 +10,24 @@ public class Main {
         Animal a3 = new Animal("mamiferes", "vache", 3, true);   // identique à a
 
         Zoo z = new Zoo("myZoo", "tunis");
-       AnimauxAquatiques aq = new AnimauxAquatiques("poissons", "requin", 6, false, "ocean");
+
         AnimauxTerrestres t = new AnimauxTerrestres("mammiferes", "vache", 3, true, 4);
         Dolphin d = new Dolphin("mammiferes", "flipper", 8, true, "mer", 40.5f);
         Penguin p = new Penguin("oiseaux", "pingu", 4, false, "bassin", 120.0f);
-
-        System.out.println(aq);
+        Penguin p1 = new Penguin("oiseaux", "pingu", 4, false, "bassin", 140.0f);
+        z.AddAquatiqueAnimal(d);
+        z.AddAquatiqueAnimal(p);
+        z.AddAquatiqueAnimal(p1);
+        System.out.println("*************");
+  z.afficherAquatiqueAnimal();
+        System.out.println("*************");
+        System.out.println("la profondeur est:"+z. maxPenguinDepth());
+         z.displayNumberOfAquaticsByType();
         System.out.println(t);
         System.out.println(d);
         System.out.println(p);
 
-        aq.swim();
+
         d.swim();
         p.swim();
         System.out.println("la vitesse est:"+d.getSmimmingSpeed());
