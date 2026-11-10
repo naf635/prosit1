@@ -86,14 +86,22 @@ public class Zoo {
     {
         return animalcount == nbrCages;
     }
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal)throws ZooFullException, invalideAgeException{
         int verif = searchAnimal(animal);
-        if (verif == -1 && !isZooFull()) {
-            animals[animalcount] = animal;
-            animalcount+=1;
-            return true;
+        if(isZooFull()){
+       throw new ZooFullException("Le zoo est plein, impossible d’ajouter un nouvel animal.");
         }
-        return false;
+        if(animal.getAge()<0)
+        {
+            throw new invalideAgeException("Âge d’animal invalide : l’âge ne peut pas être négatif");
+        }
+        if (verif == -1 ) {
+            animals[animalcount] = animal;
+
+            animalcount+=1;
+
+        }
+
 
     }
    public static Zoo comparerZoo(Zoo z1,Zoo z2)
@@ -155,4 +163,7 @@ public class Zoo {
 
     }
 
+    public int getAnimalCount() {
+        return animalcount;
+    }
 }
